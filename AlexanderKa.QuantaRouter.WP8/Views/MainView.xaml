@@ -1,0 +1,58 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CaliburnMicro.Views.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:cal="http://www.caliburnproject.org"
+    xmlns:extras="clr-namespace:Caliburn.Micro.Extras;assembly=Caliburn.Micro.Extras"
+    xmlns:controls2="clr-namespace:CaliburnMicro.Controls"
+    xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
+    xmlns:convertors="clr-namespace:CaliburnMicro.Convertors"
+    xmlns:ui="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    mc:Ignorable="d"
+    Foreground="White"
+    SupportedOrientations="PortraitOrLandscape" Orientation="None"
+    shell:SystemTray.IsVisible="False" x:Name="MainPage">
+    <phone:PhoneApplicationPage.Resources>
+        <SolidColorBrush x:Key="MainBlue">#00AEEF</SolidColorBrush>
+    </phone:PhoneApplicationPage.Resources>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+  
+    <StackPanel Orientation="Vertical" x:Name="MainStackPanel" Background="White">
+
+
+        <Grid x:Name="MenuGrid" MinWidth="{Binding ElementName=MainPage,Path=ActualWidth}" Height="25"   Margin="0" Background="{StaticResource MainBlue}">
+
+            <Grid  HorizontalAlignment="Left" Height="18">
+                <controls2:AntennaControl HorizontalAlignment="Left" Height="18" Provider="{Binding Router.Status.SPN}" Signal="{Binding Router.Status.SignalLevel}"    ></controls2:AntennaControl>
+                <!--<controls:DisableButtonControl DisableCommand="{Binding Router.LTESwitch}" State="{Binding Router.Status.State}" ></controls:DisableButtonControl>-->
+
+            </Grid>
+            <Grid HorizontalAlignment="Right">
+                <controls2:BatteryControl HorizontalAlignment="Right"  Height="18" BatteryPrecent="{Binding Router.Status.BatteryLevel}" ChargingState="{Binding Router.Status.BatteryState}"  ></controls2:BatteryControl>
+            </Grid>
+
+
+
+
+        </Grid>
+       
+        <Grid x:Name="LayoutRoot"
+      VerticalAlignment="Top">
+            <ScrollViewer x:Name="ScrollViewer" Height="auto" VerticalScrollBarVisibility="Visible" AllowDrop="False">
+               <StackPanel>
+                <ui:AdControl x:Name="myAd" Height="50" Width="300" 
+                  AdUnitId="168977" ApplicationId="7ad20b87-8c6c-4485-b342-54ac49a7e45f"/>
+                <extras:ContentHost CurrentModel="{Binding selectedMenuItemView}"></extras:ContentHost>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    
+    </StackPanel>
+  
+   
+</phone:PhoneApplicationPage>

@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CaliburnMicro.Views.MainStatusView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:convertors="clr-namespace:CaliburnMicro.Convertors"
+    Foreground="Black"
+    Background="White">
+    <phone:PhoneApplicationPage.Resources>
+        <convertors:StateConvertor x:Key="StateConvertorResource"></convertors:StateConvertor>
+        <convertors:NullValueConvertor x:Key="NullValueConvertorResource"></convertors:NullValueConvertor>
+        <convertors:dBValueConvertor x:Key="dBValueConvertorResource"></convertors:dBValueConvertor>
+        <convertors:dBmValueConvertor x:Key="dBmValueConvertorResource"></convertors:dBmValueConvertor>
+    </phone:PhoneApplicationPage.Resources>
+
+
+    <StackPanel x:Name="FullViewStackPanel" Margin="0,-20,0,0" Background="White">
+        <StackPanel Orientation="Vertical"   >
+            <TextBlock Margin="10,20,10,10" Text="ВЕРСИЯ ПО"  FontSize="28" ></TextBlock>
+            <StackPanel Margin="15,0,10,10">
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >Версия модема:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.FirmwareVersion,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >IMEI:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.IMEI,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >Название модели:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.DeviceName,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >Версия RF:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.RfVersion,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >Версия ASIC:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.AsicVersion,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"   >
+            <TextBlock Margin="10,20,10,10" Text="ИНФОРМАЦИЯ О SIM"  FontSize="28" ></TextBlock>
+            <StackPanel Margin="15,0,10,10">
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >SIM IMSI:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.IMSI,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >SIM IMSISV:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.IMEISV,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >UICC-ID:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.UICCID,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >Зона обслуживания PLMN:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.PLMN,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                    <TextBlock >Код оператора MNC:</TextBlock>
+                    <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.MNC,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+
+    </StackPanel>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,100 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CaliburnMicro.Views.MainInfoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    Foreground="Black"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:convertors="clr-namespace:CaliburnMicro.Convertors">
+    <phone:PhoneApplicationPage.Resources>
+        <convertors:StateConvertor x:Key="StateConvertorResource"></convertors:StateConvertor>
+        <convertors:NullValueConvertor x:Key="NullValueConvertorResource"></convertors:NullValueConvertor>
+        <convertors:dBValueConvertor x:Key="dBValueConvertorResource"></convertors:dBValueConvertor>
+        <convertors:dBmValueConvertor x:Key="dBmValueConvertorResource"></convertors:dBmValueConvertor>
+    </phone:PhoneApplicationPage.Resources>
+    <StackPanel  Background="White">
+
+      
+        <!--LTE Соединение-->
+        <StackPanel x:Name="FullViewStackPanel" Margin="0,-20,0,0">
+            <StackPanel Orientation="Vertical"   >
+                <TextBlock Margin="10,20,10,10" Text="LTE СОЕДИНЕНИЕ"  FontSize="28" ></TextBlock>
+                <StackPanel Margin="15,0,10,10">
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Статус подключения:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.State,Converter={StaticResource StateConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >IP-адрес узла в сети:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.IP,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Первичная DNS:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.DNS,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Вторичная DNS:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.DNS,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >MTU:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.MTU,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Название провайдера:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.SPN,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Сеть:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.InterfaceType,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Сигнал(SINR/RSRP):</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.SINR,Converter={StaticResource dBValueConvertorResource}}"></TextBlock>
+                        <TextBlock  Margin="5,0,0,0"> /</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.RSRP,Converter={StaticResource dBmValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+
+                        <TextBlock >Номер сектора БС:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.CI,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"   >
+                <TextBlock Margin="10,20,10,10" Text="WLAN СОЕДИНЕНИЕ"  FontSize="28" ></TextBlock>
+                <StackPanel Margin="15,0,10,10">
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >SSID:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.Wifi_SSID,Converter={StaticResource StateConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Канал:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.Wifi_Channel,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >Число подключенных пользователей:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.WifiUsers,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >IP-адрес:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.DefaultGateway,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                        <TextBlock >MAC-адрес в сети WLAN:</TextBlock>
+                        <TextBlock  Margin="5,0,0,0" Text="{Binding Router.Status.Wifi_Mac,Converter={StaticResource NullValueConvertorResource}}"></TextBlock>
+                    </StackPanel>
+
+
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+
+    </StackPanel>
+
+</phone:PhoneApplicationPage>

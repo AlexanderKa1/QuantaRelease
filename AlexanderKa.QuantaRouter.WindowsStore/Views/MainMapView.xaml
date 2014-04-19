@@ -1,0 +1,24 @@
+﻿<Common:LayoutAwarePage
+    x:Class="AlexanderKa.QuantaRouter.WindowsStore.Views.MainMapView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AlexanderKa.QuantaRouter.WindowsStore.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Maps="using:Bing.Maps"
+    xmlns:foundation="using:Windows.Foundation"
+    xmlns:Common="using:AlexanderKa.QuantaRouter.WindowsStore.Common"
+    mc:Ignorable="d">
+
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="Blue" Margin="-80,-40,0,0">
+        <!--<Maps:Map HomeRegion="Russia" Language="ru-RU" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  x:Name="map" MinHeight="600" MinWidth="600"
+                  Credentials="Aq-e7MZ0e3cK_YLPnQ7q4oI0ROOcRhJwdOPWQaorh7-FiL-HEo6y86sXP6VVBCE5">
+            <Maps:Map.Children>
+
+                <Maps:MapLayer>
+
+                </Maps:MapLayer>
+            </Maps:Map.Children>
+        </Maps:Map>-->
+    </Grid>
+</Common:LayoutAwarePage>

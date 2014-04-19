@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="AlexanderKa.QuantaRouter.WindowsStore.Controls.AntennaControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AlexanderKa.QuantaRouter.WindowsStore.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Grid>
+        <Grid>
+            <StackPanel Orientation="Horizontal" >
+                 <Grid>
+                    <Image x:Name="AntennaImage" Margin="-10,0,0,0" VerticalAlignment="Top" Source="ms-appx:///Images/antenna.png" Height="18" Width="40"></Image>
+                    <TextBlock x:Name="X" Text="X" Margin="15,9,0,0" FontWeight="Bold" FontSize="10" Foreground="White" ></TextBlock>
+                 </Grid>
+                <Grid Background="White" x:Name="Singnal1" VerticalAlignment="Top" Height="6" Width="2" Margin="-32,12,0,0"></Grid>
+                <Grid Background="White" x:Name="Singnal2" VerticalAlignment="Top" Height="8" Width="2" Margin="-26,10,0,0"></Grid>
+                <Grid Background="White" x:Name="Singnal3" VerticalAlignment="Top" Height="10" Width="2" Margin="-20,8,0,0"></Grid>
+                <Grid Background="White" x:Name="Singnal4" VerticalAlignment="Top" Height="12" Width="2" Margin="-14,6,0,0"></Grid>
+                <Grid Background="White" x:Name="Singnal5" VerticalAlignment="Top" Height="14" Width="2" Margin="-8,4,0,0"></Grid>
+                <TextBlock x:Name="ProviderName" Style="{StaticResource BasicTextStyle}" FontSize="18" Margin="0,-1,0,0" VerticalAlignment="Top" Foreground="White"></TextBlock>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,185 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CaliburnMicro.Views.MainStatisticsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     Foreground="Black"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:convertors="clr-namespace:CaliburnMicro.Convertors"
+    MinHeight="960"
+     xmlns:chart="clr-namespace:Sparrow.Chart;assembly=Sparrow.Chart.WP8.45">
+    <phone:PhoneApplicationPage.Resources>
+        <Style x:Key="containerStyle" TargetType="Border">
+
+        </Style>
+        <Style TargetType="Line" x:Key="crossLineStyle">
+            <Setter Property="Stroke" Value="#FFD9EAFF"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+        </Style>
+
+
+        <Style TargetType="Line" x:Key="axisLineStyle">
+            <Setter Property="Stroke" Value="#FFD9EAFF"/>
+            <Setter Property="StrokeThickness" Value="0"/>
+        </Style>
+        <Style TargetType="Line" x:Key="minorcrossLineStyle">
+            <Setter Property="Stroke" Value="#FF117DBB"/>
+            <Setter Property="StrokeThickness" Value="0.25"/>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+       
+    <StackPanel x:Name="LayoutRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   Background="White">
+       
+        <StackPanel Orientation="Vertical"  x:Name="StackPanel1" Background="{x:Null}">
+                <Grid Margin="10"  >
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#ffbb2533"  Height="24" Margin="0,0,0,18">
+                            <TextBlock Foreground="White" Text="{Binding RSRQLabel}" FontSize="16"></TextBlock>
+                        </Grid>
+                        <chart:SparrowChart   HorizontalAlignment="Left" Height="160" Background="White"  FontFamily="Segoe" ContainerBorderStyle="{StaticResource containerStyle}" x:Name="Chart" >
+                            <chart:SparrowChart.XAxis>
+                                <chart:LinearXAxis  CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}"  Visibility="Collapsed" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4"  ShowCrossLines="True" Header="" StringFormat="0.0"/>
+                            </chart:SparrowChart.XAxis>
+                            <chart:SparrowChart.YAxis>
+                                <chart:LinearYAxis ShowMajorTicks="True" ShowMinorCrossLines="True"  CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4" ShowCrossLines="True"  StringFormat="0.0">
+                                </chart:LinearYAxis>
+                            </chart:SparrowChart.YAxis>
+                            <chart:LineSeries Label="{Binding RSRQLabel}" PointsSource="{Binding RSRPCollection}" Stroke="#ffbb2533" XPath="Value"   YPath="RSRQ" StrokeThickness="1"  />
+
+
+                        </chart:SparrowChart>
+                    </StackPanel>
+                </Grid>
+
+
+                <Grid Margin="10" >
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#FF2D3A78"  Height="22" Margin="0,0,0,18">
+                        <TextBlock Foreground="White" Text="{Binding SINRLabel}" FontSize="16"></TextBlock>
+                        </Grid>
+                        <chart:SparrowChart HorizontalAlignment="Left"  Height="160" Background="White"  FontFamily="Segoe" ContainerBorderStyle="{StaticResource containerStyle}"  >
+                            <chart:SparrowChart.XAxis>
+                                <chart:LinearXAxis  CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}"  Visibility="Collapsed" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4"  ShowCrossLines="True" Header="" StringFormat="0.0"/>
+                            </chart:SparrowChart.XAxis>
+                            <chart:SparrowChart.YAxis>
+                                <chart:LinearYAxis ShowMajorTicks="True" ShowMinorCrossLines="True"  CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4" ShowCrossLines="True"  StringFormat="0.0">
+                                </chart:LinearYAxis>
+                            </chart:SparrowChart.YAxis>
+
+                            <chart:LineSeries Label="{Binding RSSILabel}" PointsSource="{Binding RSRPCollection}" Stroke="#FF2D3A78" XPath="Value"  YPath="SINR" StrokeThickness="1" />
+
+                        </chart:SparrowChart>
+                    </StackPanel>
+                </Grid >
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="StackPanel2">
+
+                <Grid Margin="10"  >
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#ff0181ab"  Height="22" Margin="0,0,0,18">
+                        <TextBlock Foreground="White" Text="{Binding RSSILabel}" FontSize="16"></TextBlock>
+                        </Grid>
+
+
+
+                        <chart:SparrowChart   HorizontalAlignment="Left"  Height="160" Background="White"  FontFamily="Segoe" ContainerBorderStyle="{StaticResource containerStyle}"  >
+                            <chart:SparrowChart.XAxis>
+                                <chart:LinearXAxis  CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}"  Visibility="Collapsed" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4"  ShowCrossLines="True" Header="" StringFormat="0.0"/>
+                            </chart:SparrowChart.XAxis>
+                            <chart:SparrowChart.YAxis>
+                                <chart:LinearYAxis ShowMajorTicks="True" ShowMinorCrossLines="True"  CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4" ShowCrossLines="True"  StringFormat="0.0">
+                                </chart:LinearYAxis>
+                            </chart:SparrowChart.YAxis>
+
+                            <chart:LineSeries Label="{Binding RSSILabel}" PointsSource="{Binding RSRPCollection}" Stroke="#ff0181ab" XPath="Value"  YPath="RSSI" StrokeThickness="1" />
+
+
+                        </chart:SparrowChart>
+                    </StackPanel>
+                </Grid>
+
+
+
+                <Grid Margin="10">
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#ff7ca10b" Height="22" Margin="0,0,0,18">
+                        <TextBlock Foreground="White" Text="{Binding RSRPLabel}" FontSize="16"></TextBlock>
+                        </Grid>
+                        <chart:SparrowChart   HorizontalAlignment="Left" Height="160"  Background="White"  FontFamily="Segoe" ContainerBorderStyle="{StaticResource containerStyle}"  >
+                            <chart:SparrowChart.XAxis>
+                                <chart:LinearXAxis  CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}"  Visibility="Collapsed" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4"  ShowCrossLines="True" Header="" StringFormat="0.0"/>
+                            </chart:SparrowChart.XAxis>
+                            <chart:SparrowChart.YAxis>
+                                <chart:LinearYAxis ShowMajorTicks="True" ShowMinorCrossLines="True"  CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4" ShowCrossLines="True"  StringFormat="0.0">
+                                </chart:LinearYAxis>
+                            </chart:SparrowChart.YAxis>
+
+                            <chart:LineSeries Label="{Binding RSRPLabel}" PointsSource="{Binding RSRPCollection}" Stroke="#ff7ca10b" XPath="Value"  YPath="RSRP" StrokeThickness="1" />
+
+
+                        </chart:SparrowChart>
+                    </StackPanel>
+                </Grid>
+
+
+
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="StackPanel3">
+
+                <Grid Margin="10">
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#A700AE"  Height="22" Margin="0,0,0,18">
+                        <TextBlock Foreground="White" Text="{Binding DownloadedLabel}" FontSize="16"></TextBlock>
+                        </Grid>
+
+
+
+                        <chart:SparrowChart   HorizontalAlignment="Left" Height="160" Background="White"  FontFamily="Segoe" ContainerBorderStyle="{StaticResource containerStyle}"  >
+                            <chart:SparrowChart.XAxis>
+                                <chart:LinearXAxis  CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}"  Visibility="Collapsed" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4"  ShowCrossLines="True" Header="" StringFormat="0.0"/>
+                            </chart:SparrowChart.XAxis>
+                            <chart:SparrowChart.YAxis>
+                                <chart:LinearYAxis ShowMajorTicks="True" ShowMinorCrossLines="True"  CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4" ShowCrossLines="True"  StringFormat="0.0">
+                                </chart:LinearYAxis>
+                            </chart:SparrowChart.YAxis>
+
+                            <chart:LineSeries Label="{Binding Downloaded}" PointsSource="{Binding RSRPCollection}" Stroke="#A700AE" XPath="Value"  YPath="Downloaded" StrokeThickness="1" />
+
+
+                        </chart:SparrowChart>
+                    </StackPanel>
+                </Grid>
+
+
+
+                <Grid Margin="10">
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#DC572E" Height="22" Margin="0,0,0,18">
+                        <TextBlock Foreground="White" Text="{Binding SentLabel}" FontSize="16"></TextBlock>
+                        </Grid>
+                        <chart:SparrowChart   HorizontalAlignment="Left" Height="160" Background="White"  FontFamily="Segoe" ContainerBorderStyle="{StaticResource containerStyle}"  >
+                            <chart:SparrowChart.XAxis>
+                                <chart:LinearXAxis  CrossLineStyle="{StaticResource crossLineStyle}" MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}"  Visibility="Collapsed" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4"  ShowCrossLines="True" Header="" StringFormat="0.0"/>
+                            </chart:SparrowChart.XAxis>
+                            <chart:SparrowChart.YAxis>
+                                <chart:LinearYAxis ShowMajorTicks="True" ShowMinorCrossLines="True"  CrossLineStyle="{StaticResource crossLineStyle}"  MinorLineStyle="{StaticResource minorcrossLineStyle}" MajorLineStyle="{StaticResource crossLineStyle}" AxisLineStyle="{StaticResource axisLineStyle}" MinorTicksCount="4" ShowCrossLines="True"  StringFormat="0.0">
+                                </chart:LinearYAxis>
+                            </chart:SparrowChart.YAxis>
+
+                            <chart:LineSeries Label="{Binding Sent}" PointsSource="{Binding RSRPCollection}" Stroke="#DC572E" XPath="Value"  YPath="Sent" StrokeThickness="1" />
+
+
+                        </chart:SparrowChart>
+                    </StackPanel>
+                </Grid>
+
+
+
+            </StackPanel>
+        </StackPanel>
+        
+   
+</phone:PhoneApplicationPage>

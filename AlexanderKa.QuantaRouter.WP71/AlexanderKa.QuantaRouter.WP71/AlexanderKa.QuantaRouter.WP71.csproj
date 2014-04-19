@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D30CD5F8-E856-47C5-9B6E-791494A121FE}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlexanderKa.QuantaRouter.WP71</RootNamespace>
+    <AssemblyName>AlexanderKa.QuantaRouter.WP71</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>ru%3bru-RU</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>AlexanderKa.QuantaRouter.WP71.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>AlexanderKa.QuantaRouter.WP71.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE71</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>packages\Caliburn.Micro.1.5.2\lib\wp71\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Extensions">
+      <HintPath>packages\Caliburn.Micro.1.5.2\lib\wp71\Caliburn.Micro.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Extras">
+      <HintPath>..\..\packages\Caliburn.Micro.Extras.1.0.6\lib\wp8\Caliburn.Micro.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Microsoft.Phone.Reactive" />
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
+      <HintPath>..\..\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Observable" />
+    <Reference Include="System.Runtime">
+      <HintPath>packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Caliburn.Micro.1.5.2\lib\wp71\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\Convertors\dBmValueConvertor.cs">
+      <Link>Convertors\dBmValueConvertor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\Convertors\dBValueConvertor.cs">
+      <Link>Convertors\dBValueConvertor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\Convertors\NullValueConvertor.cs">
+      <Link>Convertors\NullValueConvertor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\Convertors\SecondsToTimeValueConvertor.cs">
+      <Link>Convertors\SecondsToTimeValueConvertor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\Convertors\StateConvertor.cs">
+      <Link>Convertors\StateConvertor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\ViewModels\ConnectedDevicesViewModel.cs">
+      <Link>ViewModels\ConnectedDevicesViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\ViewModels\MainInfoViewModel.cs">
+      <Link>ViewModels\MainInfoViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\ViewModels\MainStatisticsViewModel.cs">
+      <Link>ViewModels\MainStatisticsViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\ViewModels\MainStatusViewModel.cs">
+      <Link>ViewModels\MainStatusViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\ViewModels\MainViewModel.cs">
+      <Link>ViewModels\MainViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WindowsStore\ViewModels\ViewModelBase.cs">
+      <Link>ViewModels\ViewModelBase.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Classes\HttpClientExtension.cs">
+      <Link>Classes\HttpClientExtension.cs</Link>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Controls\AntennaControl.xaml.cs">
+      <Link>Controls\AntennaControl.xaml.cs</Link>
+      <DependentUpon>AntennaControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Controls\BatteryControl.xaml.cs">
+      <Link>Controls\BatteryControl.xaml.cs</Link>
+      <DependentUpon>BatteryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\ConnectedDevicesView.xaml.cs">
+      <Link>Views\ConnectedDevicesView.xaml.cs</Link>
+      <DependentUpon>ConnectedDevicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\MainInfoView.xaml.cs">
+      <Link>Views\MainInfoView.xaml.cs</Link>
+      <DependentUpon>MainInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\MainStatisticsView.xaml.cs">
+      <Link>Views\MainStatisticsView.xaml.cs</Link>
+      <DependentUpon>MainStatisticsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\MainStatusView.xaml.cs">
+      <Link>Views\MainStatusView.xaml.cs</Link>
+      <DependentUpon>MainStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="..\..\AlexanderKa.QuantaRouter.WP8\Controls\AntennaControl.xaml">
+      <Link>Controls\AntennaControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\AlexanderKa.QuantaRouter.WP8\Controls\BatteryControl.xaml">
+      <Link>Controls\BatteryControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\ConnectedDevicesView.xaml">
+      <Link>Views\ConnectedDevicesView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\MainInfoView.xaml">
+      <Link>Views\MainInfoView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\MainStatisticsView.xaml">
+      <Link>Views\MainStatisticsView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\..\AlexanderKa.QuantaRouter.WP8\Views\MainStatusView.xaml">
+      <Link>Views\MainStatusView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\antenna.png">
+      <Link>Images\antenna.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\antenna.scale-100.png">
+      <Link>Images\antenna.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\antenna.scale-140.png">
+      <Link>Images\antenna.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\antenna.scale-180.png">
+      <Link>Images\antenna.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\BadgeLogo.scale-100.png">
+      <Link>Images\BadgeLogo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\BadgeLogo.scale-140.png">
+      <Link>Images\BadgeLogo.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\BadgeLogo.scale-180.png">
+      <Link>Images\BadgeLogo.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\battery.png">
+      <Link>Images\battery.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\batterycharging.png">
+      <Link>Images\batterycharging.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\Logo.png">
+      <Link>Images\Logo.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\Logo.scale-100.png">
+      <Link>Images\Logo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\Logo.scale-140.png">
+      <Link>Images\Logo.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\Logo.scale-180.png">
+      <Link>Images\Logo.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\Logo.scale-80.png">
+      <Link>Images\Logo.scale-80.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.png">
+      <Link>Images\SmallLogo.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.scale-100.png">
+      <Link>Images\SmallLogo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.scale-140.png">
+      <Link>Images\SmallLogo.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.scale-180.png">
+      <Link>Images\SmallLogo.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.scale-80.png">
+      <Link>Images\SmallLogo.scale-80.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.targetsize-16.png">
+      <Link>Images\SmallLogo.targetsize-16.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.targetsize-256.png">
+      <Link>Images\SmallLogo.targetsize-256.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.targetsize-32.png">
+      <Link>Images\SmallLogo.targetsize-32.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SmallLogo.targetsize-48.png">
+      <Link>Images\SmallLogo.targetsize-48.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SplashScreen.png">
+      <Link>Images\SplashScreen.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SplashScreen.scale-100.png">
+      <Link>Images\SplashScreen.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SplashScreen.scale-140.png">
+      <Link>Images\SplashScreen.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\SplashScreen.scale-180.png">
+      <Link>Images\SplashScreen.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\StoreLogo.png">
+      <Link>Images\StoreLogo.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\StoreLogo.scale-100.png">
+      <Link>Images\StoreLogo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\StoreLogo.scale-140.png">
+      <Link>Images\StoreLogo.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\StoreLogo.scale-180.png">
+      <Link>Images\StoreLogo.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\WideLogo.scale-100.png">
+      <Link>Images\WideLogo.scale-100.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\WideLogo.scale-140.png">
+      <Link>Images\WideLogo.scale-140.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\WideLogo.scale-180.png">
+      <Link>Images\WideLogo.scale-180.png</Link>
+    </Content>
+    <Content Include="..\..\AlexanderKa.QuantaRouter.WP8\Images\WideLogo.scale-80.png">
+      <Link>Images\WideLogo.scale-80.png</Link>
+    </Content>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logo.scale-140.png" />
+    <Content Include="SmallLogo.targetsize-256.png" />
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="WideLogo.scale-180.png" />
+    <Content Include="WideLogo.scale-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AlexanderKa.QuantaRouter.PCL\AlexanderKa.QuantaRouter.PCL.csproj">
+      <Project>{CDC933F2-4C65-4CB9-8094-36265AD3A4EA}</Project>
+      <Name>AlexanderKa.QuantaRouter.PCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AlexanderKa.QuantaRouter.Visual\AlexanderKa.QuantaRouter.Visual.csproj">
+      <Project>{E6142085-87CE-4216-96B7-09620CB122A3}</Project>
+      <Name>AlexanderKa.QuantaRouter.Visual</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Sparrow.Chart\WP7\Sparrow.Chart.WP7.csproj">
+      <Project>{4DB782CD-732A-435E-BF8E-87BB990FAFEC}</Project>
+      <Name>Sparrow.Chart.WP7</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>
