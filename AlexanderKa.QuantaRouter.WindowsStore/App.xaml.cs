@@ -54,11 +54,11 @@ namespace AlexanderKa.QuantaRouter.WindowsStore
             container = new WinRTContainer();
             container.RegisterWinRTServices();
             container.PerRequest<MainViewModel>();
-            container.PerRequest<PolicyViewModel>();
+       //     container.PerRequest<PolicyViewModel>();
             //container.RegisterSharingService();
 
-            container.RegisterSettingsService()
-                .RegisterCommand<PolicyViewModel>("Заявление о конфиденциальности");
+            //container.RegisterSettingsService()
+            //    .RegisterCommand<PolicyViewModel>("Заявление о конфиденциальности");
 
             //Yandex.Metrica Start
            

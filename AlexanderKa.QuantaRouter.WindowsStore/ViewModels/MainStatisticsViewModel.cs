@@ -4,9 +4,10 @@ namespace AlexanderKa.QuantaRouter.WindowsStore.ViewModels
 {
 using Windows.UI.Xaml;
 #endif
-using System.Windows.Threading;
+
 
 #if WINDOWS_PHONE
+    using System.Windows.Threading;
 namespace CaliburnMicro.ViewModels
 {
 #endif
