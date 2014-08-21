@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="46342AlexandrKA.LTE" Publisher="CN=33480073-E32B-4D4E-B02A-F6E7D28F1B74" Version="1.3.0.11" />
+  <Identity Name="46342AlexandrKA.LTE" Publisher="CN=33480073-E32B-4D4E-B02A-F6E7D28F1B74" Version="1.3.0.12" />
   <Properties>
     <DisplayName>LTE Монитор</DisplayName>
     <PublisherDisplayName>Alexander KA</PublisherDisplayName>

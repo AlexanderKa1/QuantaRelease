@@ -37,9 +37,9 @@ namespace AlexanderKa.QuantaRouter.WindowsStore.Views
         {
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Launcher.LaunchUriAsync(new Uri("https://mega.co.nz/#!4ApSQAoK!e4z1HjtG7KO5zGTCZmT65CLkfjYxlxxPhQ5vEGcJFd0")); 
+            await Launcher.LaunchUriAsync(new Uri("https://mega.co.nz/#!4ApSQAoK!e4z1HjtG7KO5zGTCZmT65CLkfjYxlxxPhQ5vEGcJFd0")); 
         }
     }
 }

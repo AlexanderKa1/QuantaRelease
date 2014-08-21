@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Windows.UI.ApplicationSettings;
+using Windows.UI.Popups;
 using AlexanderKa.QuantaRouter.WindowsStore.ViewModels;
 using AlexanderKa.QuantaRouter.WindowsStore.Views;
 using Caliburn.Micro;
@@ -41,8 +43,12 @@ namespace AlexanderKa.QuantaRouter.WindowsStore
             //ServicePointManager.Expect100Continue = false;
 
             InitializeComponent();
+         
             
         }
+
+       
+
 
         protected override void Configure()
         {
@@ -54,11 +60,10 @@ namespace AlexanderKa.QuantaRouter.WindowsStore
             container = new WinRTContainer();
             container.RegisterWinRTServices();
             container.PerRequest<MainViewModel>();
-       //     container.PerRequest<PolicyViewModel>();
+         //   container.PerRequest<PolicyViewModel>();
             //container.RegisterSharingService();
-
-            //container.RegisterSettingsService()
-            //    .RegisterCommand<PolicyViewModel>("Заявление о конфиденциальности");
+           
+           
 
             //Yandex.Metrica Start
            

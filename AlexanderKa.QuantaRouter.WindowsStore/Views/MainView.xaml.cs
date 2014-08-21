@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ApplicationSettings;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,7 +30,21 @@ namespace AlexanderKa.QuantaRouter.WindowsStore.Views
         public MainView()
         {
             this.InitializeComponent();
-         
+            this.Loaded += MainView_Loaded;
+        }
+
+        void MainView_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.Loaded -= MainView_Loaded;
+        
+        }
+
+      
+
+        private async void DoOperation(IUICommand command)
+        {
+            Uri uri = new Uri("https://mega.co.nz/#!4ApSQAoK!e4z1HjtG7KO5zGTCZmT65CLkfjYxlxxPhQ5vEGcJFd0");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
         }
 
         /// <summary>
